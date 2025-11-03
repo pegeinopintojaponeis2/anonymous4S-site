@@ -1,0 +1,156 @@
+body {
+  background-color: #000;
+  color: #C0C0C0;
+  font-family: 'Share Tech Mono', monospace;
+  margin: 0;
+  padding: 40px;
+  overflow-x: hidden;
+}
+
+/* Fundo Matrix */
+canvas#matrix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+
+/* Camada escura para ofuscar o fundo */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  z-index: -1;
+}
+
+/* Layout principal */
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.left, .center, .right {
+  flex: 1;
+  min-width: 280px;
+}
+
+h2 {
+  text-shadow: 0 0 10px #C0C0C0;
+  margin-bottom: 10px;
+}
+
+h3 {
+  margin-top: 30px;
+  color: #00BFFF;
+  text-shadow: 0 0 5px #00BFFF;
+}
+
+p {
+  line-height: 1.6;
+}
+
+a {
+  color: #00BFFF;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #39FF14;
+  text-shadow: 0 0 10px #39FF14;
+}
+
+.symbol img {
+  width: 120px;
+  filter: grayscale(100%);
+  margin-bottom: 10px;
+}
+
+.symbol {
+  text-align: center;
+  background: linear-gradient(to bottom, #000, #222);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #222;
+}
+
+.game-list {
+  margin-top: 20px;
+}
+
+.game-list p {
+  margin: 10px 0;
+}
+
+.footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 0.9em;
+  color: #666;
+}
+
+/* Status dos jogos */
+.status {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+.online {
+  background-color: #39FF14;
+  box-shadow: 0 0 5px #39FF14;
+}
+
+.offline {
+  background-color: #FF0000;
+  box-shadow: 0 0 5px #FF0000;
+}
+
+.update {
+  background-color: #00BFFF;
+  box-shadow: 0 0 5px #00BFFF;
+}
+
+/* Legalidade */
+.legal {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #111;
+  border-left: 4px solid #00BFFF;
+  box-shadow: 0 0 10px #00BFFF;
+}
+
+.legal a {
+  color: #39FF14;
+  text-decoration: underline;
+}
+
+
+.legal, .curiosidades {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #111;
+  border-left: 4px solid #00BFFF;
+  box-shadow: 0 0 10px #00BFFF;
+}
+
+.legal a, .curiosidades a {
+  color: #39FF14;
+  text-decoration: underline;
+}
+
+.curiosidades ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.curiosidades li {
+  margin-bottom: 8px;
+}

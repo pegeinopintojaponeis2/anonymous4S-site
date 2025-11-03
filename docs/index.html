@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>anonymous4cu.org</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="matrix"></canvas>
+  <div id="overlay"></div>
+
+  <div class="container">
+    <div class="left">
+      <h2>🎮 Indexador de Jogos Gratuitos</h2>
+      <p>Este site foi criado com o objetivo de facilitar o acesso a jogos que já não são vendidos, não fazem mais sucesso comercial ou foram abandonados pelas empresas. Aqui você encontra links públicos para baixar esses jogos gratuitamente.</p>
+      <p><strong>Importante:</strong> Este site <u>não distribui</u> nenhum jogo diretamente. Ele apenas <u>indexa links</u> já disponíveis na internet, como torrents, drives e arquivos compartilhados por terceiros. Isso não configura pirataria.</p>
+      <p>Nosso foco é ajudar os menos favorecidos a reviverem experiências clássicas, nostálgicas e acessarem conteúdos que foram esquecidos pela indústria. Até jogos de PlayStation 2 estão aqui, com carinho e respeito à história dos games.</p>
+
+      <h3>📦 Jogos Disponíveis</h3>
+      <div class="game-list">
+        <!-- COPIE E COLE OS BLOCOS ABAIXO PARA ADICIONAR MAIS JOGOS -->
+
+        <div class="jogo">
+          <p><strong>Little Nightmare 3</strong> — <a href="https://exemplo.com/nightmare3" target="_blank">Download</a>
+            <span class="status online" title="Online"></span>
+          </p>
+        </div>
+
+        <div class="jogo">
+          <p><strong>Doom Terminal</strong> — <a href="https://exemplo.com/doomterminal" target="_blank">Download</a>
+            <span class="status offline" title="Offline"></span>
+          </p>
+        </div>
+
+        <div class="jogo">
+          <p><strong>Snake Hacker Edition</strong> — <a href="https://exemplo.com/snakehacker" target="_blank">Download</a>
+            <span class="status update" title="Atualização disponível"></span>
+          </p>
+        </div>
+
+        <!-- Adicione mais jogos abaixo -->
+      </div>
+    </div>
+
+    <div class="center">
+      <div class="symbol">
+        <img src="img/anonymous.png" alt="Símbolo Anonymous">
+        <p>anonymous4cu.org</p>
+        <p>Distribuição gratuita e consciente</p>
+      </div>
+    </div>
+
+    <div class="right">
+      <h2>📜 Legalidade e Transparência</h2>
+      <p>⏰ Hora atual: <span id="hora"></span></p>
+      <p>Este site atua como um <strong>indexador de links públicos</strong> para jogos antigos e abandonados comercialmente.</p>
+      <p>Não hospedamos arquivos, não vendemos conteúdo e não violamos direitos autorais.</p>
+      <p>Amparado pela <a href="https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/l14852.htm" target="_blank">Lei nº 14.852/2024</a>, que regula o setor de jogos eletrônicos no Brasil.</p>
+      <p>Certificado de segurança fornecido por <a href="https://letsencrypt.org/pt-br/" target="_blank">Let's Encrypt</a>.</p>
+      <p>Nosso objetivo é social, não comercial. Ajudamos os menos favorecidos a acessarem cultura e entretenimento digital.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>anonymous4cu.org © 2025 — Projeto independente para acesso gratuito a jogos esquecidos</p>
+  </div>
+
+  <script>
+    // Hora em tempo real
+    function atualizarHora() {
+      const agora = new Date();
+      const hora = agora.toLocaleTimeString();
+      document.getElementById("hora").textContent = hora;
+    }
+    setInterval(atualizarHora, 1000);
+    atualizarHora();
+
+    // Matrix background
+    const canvas = document.getElementById("matrix");
+    const ctx = canvas.getContext("2d");
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+
+    const letras = "01#@%$&*";
+    const fontSize = 14;
+    const columns = canvas.width / fontSize;
+    const drops = Array(Math.floor(columns)).fill(1);
+
+    function drawMatrix() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "#CCCCCC";
+      ctx.font = fontSize + "px monospace";
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = letras[Math.floor(Math.random() * letras.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+
+    setInterval(drawMatrix, 100);
+  </script>
+</body>
+</html>
+
+<div class="legal">
+  <h3>📜 Legalidade e Propósito</h3>
+  <p>Este site é um <strong>indexador de links públicos</strong> voltado para a preservação, acesso gratuito e consciente a jogos eletrônicos antigos e novos que foram abandonados comercialmente ou não estão mais disponíveis em plataformas oficiais.</p>
+  <p>Não hospedamos arquivos, não vendemos conteúdo e não violamos direitos autorais. Todos os links aqui são externos e públicos, como torrents, drives e arquivos compartilhados por terceiros.</p>
+  <p>Segundo a <a href="https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/l14852.htm" target="_blank">Lei nº 14.852/2024</a>, que regula o setor de jogos eletrônicos no Brasil, o uso, desenvolvimento e indexação de conteúdo de jogos é livre, desde que não haja distribuição direta de material protegido.</p>
+  <p>Nosso objetivo é <strong>social</strong>: ajudar os menos favorecidos a acessarem cultura digital, reviverem experiências nostálgicas e preservarem a história dos games. Acreditamos que jogos são uma forma legítima de arte, educação e inclusão.</p>
+  <p>O site é protegido por certificado gratuito da <a href="https://letsencrypt.org/pt-br/" target="_blank">Let's Encrypt</a>, garantindo segurança e privacidade aos visitantes.</p>
+</div>
+
+<div class="curiosidades">
+  <h3>🕹️ Curiosidades sobre os Jogos</h3>
+  <ul>
+    <li><strong>Jogos antigos</strong> como os de PlayStation 2, Dreamcast e Game Boy são preservados aqui por fãs e comunidades que se dedicam a manter viva a memória dos clássicos.</li>
+    <li><strong>Jogos novos e independentes</strong> também aparecem, especialmente aqueles que foram descontinuados ou liberados gratuitamente pelos próprios criadores.</li>
+    <li>Muitos jogos indexados aqui foram criados por desenvolvedores solo, estudantes ou coletivos que não têm estrutura comercial, mas oferecem experiências incríveis.</li>
+    <li>Alguns títulos foram modificados por fãs para rodar em PCs fracos, com melhorias de acessibilidade e tradução para português.</li>
+    <li>Você pode encontrar desde aventuras gráficas e RPGs retrô até simuladores modernos e jogos experimentais que nunca chegaram às lojas.</li>
+  </ul>
+  <p>Se você conhece algum jogo que merece ser lembrado, pode sugerir para ser indexado aqui. A comunidade agradece!</p>
+</div>
